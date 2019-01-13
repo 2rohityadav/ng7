@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <input type="text" name="name" [(ngModel)]="name">
+  <br/>
+  {{name}}
+
+  <hr>
+  <input type="text" name="username" [ngModel]="username" (ngModelChange)="updateUsername($event)" >
+  <br/>
+  {{username}}
+
+</div>
+<h2>Here are some Users: </h2>
+<h5>{{errorMsg}}</h5>
+<ul *ngFor="let user of gusers">
+  <li>{{user.name}}</li>
+</ul>
+
+<router-outlet></router-outlet>
